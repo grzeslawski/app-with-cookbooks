@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Co byś zjadł</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap&subset=latin-ext"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="header__title">Co byś zjadł?</h1>
+      <p class="header__description">
+        Wybierz z listy produkty które posiadasz
+      </p>
+    </header>
+    <div class="search">
+      <input
+        id="input"
+        class="search__input"
+        type="text"
+        name="product"
+        list="products-list"
+        placeholder="Znajdź produkt"
+      />
+      <datalist class="search__products-list" id="products-list"> </datalist>
+      <button class="button search__button-add">Dodaj produkt</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
