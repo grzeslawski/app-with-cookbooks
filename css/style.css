@@ -66,6 +66,21 @@ body {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
 }
 
+.search__title {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  color: rgba(104, 191, 64, 0.9);
+}
+
+.search__title ul {
+  color: black;
+}
+
+.search__title ul li {
+  font-weight: normal;
+  font-size: 12px;
+}
+
 .button {
   font-family: "Montserrat", Arial, Helvetica, sans-serif;
   cursor: pointer;
@@ -77,20 +92,5 @@ body {
 
 .button:hover {
   font-weight: bold;
-}
-
-.products-list {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  color: rgba(104, 191, 64, 0.9);
-}
-
-.products-list ul {
-  color: black;
-}
-
-.products-list ul li {
-  font-weight: normal;
-  font-size: 12px;
 }
 /*# sourceMappingURL=style.css.map */

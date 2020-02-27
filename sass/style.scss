@@ -48,6 +48,19 @@ body {
 
   &__search__button-add {
   }
+
+  &__title {
+    font-family: "Montserrat", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: hsla(101, 50%, 50%, 0.9);
+    ul {
+      color: black;
+      li {
+        font-weight: normal;
+        font-size: 12px;
+      }
+    }
+  }
 }
 
 .button {
@@ -60,18 +73,5 @@ body {
 
   &:hover {
     font-weight: bold;
-  }
-}
-
-.products-list {
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  font-size: 20px;
-  color: hsla(101, 50%, 50%, 0.9);
-  ul {
-    color: black;
-    li {
-      font-weight: normal;
-      font-size: 12px;
-    }
   }
 }

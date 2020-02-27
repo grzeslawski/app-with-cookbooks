@@ -15,33 +15,40 @@ productsList.forEach((item, index) => {
 
 function addProduct() {
   const input = document.querySelector(".search__input");
-  productsOwned.push(input.value);
+
   createProductsList();
   input.value = "";
-  return productsOwned;
 }
 
 function createProductsList() {
   const search = document.querySelector(".search");
 
-  if (!search.querySelector("h2")) {
+  if (!search.querySelector("h2") && input.value) {
     const list = document.createElement("h2");
     const itemsList = document.createElement("ul");
-    list.classList.add("products-list");
+    const searchButton = document.createElement("button");
+    searchButton.classList.add("search__button-search");
+
+    list.classList.add("search__title");
     list.innerHTML = "Lista produktów:";
-    list.appendChild(itemsList);
+    searchButton.innerHTML = "Znajdź przepis";
     search.appendChild(list);
+    search.appendChild(itemsList);
+    search.appendChild(searchButton);
   }
 
   if (input.value) {
-    const productsList = document.querySelector(".products-list");
+    const productsList = document.querySelector(".search__title");
     const itemsList = document.querySelector("ul");
     const item = document.createElement("li");
+    productsOwned.push(input.value);
+
     itemsList.appendChild(item);
     productsList.appendChild(itemsList);
     for (let i = 0; i < productsOwned.length; i++) {
       item.innerHTML = productsOwned[i];
     }
+    console.log(productsOwned);
   }
 }
 
