@@ -16,39 +16,50 @@ productsList.forEach((item, index) => {
 function addProduct() {
   const input = document.querySelector(".search__input");
 
+  if (!document.querySelector(".products")) {
+    createSectionProducts();
+  }
   createProductsList();
+
   input.value = "";
 }
 
-function createProductsList() {
-  const search = document.querySelector(".search");
+function createSectionProducts() {
+  const container = document.querySelector(".container");
+  const products = document.createElement("section");
+  products.classList.add("products");
+  container.appendChild(products);
+}
 
-  if (!search.querySelector("h2") && input.value) {
+function createProductsList() {
+  const products = document.querySelector(".products");
+
+  if (!products.querySelector("h2") && input.value) {
     const list = document.createElement("h2");
     const itemsList = document.createElement("ul");
     const searchButton = document.createElement("button");
-    searchButton.classList.add("search__button-search");
 
-    list.classList.add("search__title");
+    list.classList.add("products__title");
     list.innerHTML = "Lista produktów:";
+
+    searchButton.classList.add("button", "products__button-search");
     searchButton.innerHTML = "Znajdź przepis";
-    search.appendChild(list);
-    search.appendChild(itemsList);
-    search.appendChild(searchButton);
+
+    products.appendChild(list);
+    products.appendChild(itemsList);
+    products.appendChild(searchButton);
   }
 
   if (input.value) {
-    const productsList = document.querySelector(".search__title");
     const itemsList = document.querySelector("ul");
     const item = document.createElement("li");
-    productsOwned.push(input.value);
 
+    productsOwned.push(input.value);
     itemsList.appendChild(item);
-    productsList.appendChild(itemsList);
+
     for (let i = 0; i < productsOwned.length; i++) {
       item.innerHTML = productsOwned[i];
     }
-    console.log(productsOwned);
   }
 }
 

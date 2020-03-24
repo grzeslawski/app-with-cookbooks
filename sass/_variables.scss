@@ -1,0 +1,17 @@
+$base-font-size: 20px;
+$small-font-size: 10px;
+
+$font-family: "Montserrat", Arial, Helvetica, sans-serif;
+
+$main-spacing: 20px;
+$max-width: 1000px;
+
+$color-primary: hsl(101, 50%, 50%);
+$color-secondary: hsl(27, 75%, 51%);
+$color-background: hsl(0, 0%, 27%);
+
+$breakpoints: (
+  xs: 500px,
+  sm: 800px,
+  md: 1000px
+);

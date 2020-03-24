@@ -1,0 +1,38 @@
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__title {
+    font-size: 20px;
+    color: hsla(101, 50%, 50%, 0.9);
+    margin-bottom: 0px;
+  }
+
+  ul {
+    padding-left: 0;
+    li {
+      font-size: $base-font-size;
+      color: $color-secondary;
+    }
+  }
+
+  &__button-search {
+  }
+}
+
+.button {
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  cursor: pointer;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 10px;
+  width: 150px;
+
+  outline: none;
+
+  &:hover {
+    font-weight: bold;
+  }
+}
