@@ -15,30 +15,48 @@ productsList.forEach((item, index) => {
 
 function addProduct() {
   const input = document.querySelector(".search__input");
-  productsOwned.push(input.value);
+
+  if (!document.querySelector(".products")) {
+    createSectionProducts();
+  }
   createProductsList();
+
   input.value = "";
-  return productsOwned;
+}
+
+function createSectionProducts() {
+  const container = document.querySelector(".container");
+  const products = document.createElement("section");
+  products.classList.add("products");
+  container.appendChild(products);
 }
 
 function createProductsList() {
-  const search = document.querySelector(".search");
+  const products = document.querySelector(".products");
 
-  if (!search.querySelector("h2")) {
+  if (!products.querySelector("h2") && input.value) {
     const list = document.createElement("h2");
     const itemsList = document.createElement("ul");
-    list.classList.add("products-list");
+    const searchButton = document.createElement("button");
+
+    list.classList.add("products__title");
     list.innerHTML = "Lista produktów:";
-    list.appendChild(itemsList);
-    search.appendChild(list);
+
+    searchButton.classList.add("button", "products__button-search");
+    searchButton.innerHTML = "Znajdź przepis";
+
+    products.appendChild(list);
+    products.appendChild(itemsList);
+    products.appendChild(searchButton);
   }
 
   if (input.value) {
-    const productsList = document.querySelector(".products-list");
     const itemsList = document.querySelector("ul");
     const item = document.createElement("li");
+
+    productsOwned.push(input.value);
     itemsList.appendChild(item);
-    productsList.appendChild(itemsList);
+
     for (let i = 0; i < productsOwned.length; i++) {
       item.innerHTML = productsOwned[i];
     }
