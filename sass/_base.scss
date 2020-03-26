@@ -1,3 +1,7 @@
+body {
+  background-color: $color-background;
+}
+
 .container {
   box-sizing: border-box;
   max-width: $max-width;
@@ -5,5 +9,4 @@
   height: 100vh;
   margin: 0 auto;
   padding: 0 $main-spacing;
-  background-color: $color-background;
 }

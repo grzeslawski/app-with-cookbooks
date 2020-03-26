@@ -29,6 +29,10 @@ h1 {
   text-align: center;
 }
 
+body {
+  background-color: #454545;
+}
+
 .container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -37,7 +41,6 @@ h1 {
   height: 100vh;
   margin: 0 auto;
   padding: 0 20px;
-  background-color: #454545;
 }
 
 .header {

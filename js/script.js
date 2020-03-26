@@ -1,11 +1,10 @@
-const datalist = document.getElementById("products-list");
-
 const productsList = ["avocado", "banan", "cebula", "pomidor", "ziemniak"];
 const productsOwned = [];
 
 const buttonAdd = document.querySelector(".search__button-add");
 
 productsList.forEach((item, index) => {
+  const datalist = document.getElementById("products-list");
   const option = document.createElement("option");
   const txt = productsList[index];
 
@@ -35,17 +34,17 @@ function createProductsList() {
   const products = document.querySelector(".products");
 
   if (!products.querySelector("h2") && input.value) {
-    const list = document.createElement("h2");
+    const title = document.createElement("h2");
     const itemsList = document.createElement("ul");
     const searchButton = document.createElement("button");
 
-    list.classList.add("products__title");
-    list.innerHTML = "Lista produktów:";
+    title.classList.add("products__title");
+    title.innerHTML = "Lista produktów:";
 
     searchButton.classList.add("button", "products__button-search");
     searchButton.innerHTML = "Znajdź przepis";
 
-    products.appendChild(list);
+    products.appendChild(title);
     products.appendChild(itemsList);
     products.appendChild(searchButton);
   }
@@ -54,11 +53,13 @@ function createProductsList() {
     const itemsList = document.querySelector("ul");
     const item = document.createElement("li");
 
-    productsOwned.push(input.value);
-    itemsList.appendChild(item);
+    if (productsOwned.indexOf(input.value) === -1) {
+      productsOwned.push(input.value);
+      itemsList.appendChild(item);
 
-    for (let i = 0; i < productsOwned.length; i++) {
-      item.innerHTML = productsOwned[i];
+      for (let i = 0; i < productsOwned.length; i++) {
+        item.innerHTML = productsOwned[i];
+      }
     }
   }
 }
