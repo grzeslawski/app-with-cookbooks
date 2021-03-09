@@ -1,4 +1,11 @@
-const productsList = ["avocado", "banan", "cebula", "pomidor", "ziemniak"];
+const productsList = [
+  "avocado",
+  "banan",
+  "cebula",
+  "pomidor",
+  "ziemniak",
+  "marchewka",
+];
 const productsOwned = [];
 
 const buttonAdd = document.querySelector(".search__button-add");
